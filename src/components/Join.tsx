@@ -28,7 +28,7 @@ export const Join = () => {
           type="text"
           placeholder="room ID"
           onChange={(e) => setRoomId(e.target.value)}
-          className="flex-1 p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none text-gray-500"
+          className="flex-1 p-2  border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none text-gray-500"
         />
         <Button>Join</Button>
       </form>

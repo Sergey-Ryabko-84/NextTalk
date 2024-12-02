@@ -18,7 +18,7 @@ export const ChatInput: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="relative flex items-center gap-2">
+    <form onSubmit={handleSubmit} className="relative flex items-center gap-2 text-gray-500">
       <Textarea
         onChange={(e) => setMessage(e.target.value)}
         value={message}

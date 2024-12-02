@@ -46,7 +46,7 @@ export const RoomContext = createContext<RoomValue>({
   isAudioOn: true,
 });
 
-if (typeof window !== "undefined" && window.Cypress) {
+if (!!window?.Cypress) {
   window.Peer = Peer;
 }
 
@@ -112,6 +112,8 @@ export const RoomProvider = ({ children }: Props) => {
       path: "/",
       config: { iceServers },
     });
+
+    console.log("peer", peer);
 
     setMe(peer);
 
