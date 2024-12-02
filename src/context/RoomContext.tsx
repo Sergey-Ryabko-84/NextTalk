@@ -46,7 +46,7 @@ export const RoomContext = createContext<RoomValue>({
   isAudioOn: true,
 });
 
-if (!!window?.Cypress) {
+if (typeof window !== "undefined" && window.Cypress) {
   window.Peer = Peer;
 }
 
