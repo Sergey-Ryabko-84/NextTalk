@@ -106,10 +106,16 @@ export const RoomProvider = ({ children }: Props) => {
   }, [userName, userId, roomId]);
 
   useEffect(() => {
+    if (!userId) {
+      console.log("Waiting for userId...");
+      return;
+    }
+
     const peer = new Peer(userId, {
       host: process.env.NEXT_PUBLIC_PEER_SERVER_HOST,
       port: 443,
       path: "/",
+      debug: 3,
       config: { iceServers },
     });
 
@@ -126,6 +132,7 @@ export const RoomProvider = ({ children }: Props) => {
     }
 
     const enterRoom = ({ roomId }: { roomId: string }) => {
+      console.log("room-created");
       push(`/room/${roomId}`);
     };
 
@@ -147,7 +154,7 @@ export const RoomProvider = ({ children }: Props) => {
       me?.disconnect();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [userId]);
 
   useEffect(() => {
     if (screenSharingId) {

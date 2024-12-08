@@ -1,10 +1,10 @@
 import { Join } from "@/components";
-import { UserProvider } from "@/context";
+import { RoomProvider } from "@/context";
 
 export default function Home() {
   return (
-    <UserProvider>
+    <RoomProvider>
       <Join />
-    </UserProvider>
+    </RoomProvider>
   );
 }

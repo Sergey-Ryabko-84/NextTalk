@@ -1,14 +1,10 @@
-import { ChatProvider, RoomProvider, UserProvider } from "@/context";
+import { ChatProvider } from "@/context";
 import { Room } from "@/components";
 
 const RoomPage = () => (
-  <UserProvider>
-    <RoomProvider>
-      <ChatProvider>
-        <Room />
-      </ChatProvider>
-    </RoomProvider>
-  </UserProvider>
+  <ChatProvider>
+    <Room />
+  </ChatProvider>
 );
 
 export default RoomPage;
