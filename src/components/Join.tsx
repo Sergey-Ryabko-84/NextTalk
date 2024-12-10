@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ws } from "@/lib";
-import { Button, NameInput } from "@/components";
+import { Button } from "@/components";
 
 export const Join = () => {
   const [roomId, setRoomId] = useState<string>("");
@@ -20,7 +20,7 @@ export const Join = () => {
 
   return (
     <div className="flex flex-col gap-4 items-center w-96 mx-auto mt-[35vh]">
-      <NameInput />
+      {/* <NameInput /> */}
       <Button onClick={createRoom}>Start new meeting</Button>
       <p className="text-gray-500">or</p>
       <form className="w-full flex gap-2 items-center" onSubmit={(e) => joinRoom(e)}>

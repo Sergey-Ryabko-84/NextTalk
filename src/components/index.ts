@@ -1,3 +1,4 @@
+export * from "./ClientWrapper";
 export * from "./Room";
 export * from "./Chat";
 export * from "./Button";
